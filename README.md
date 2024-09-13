@@ -7,60 +7,47 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Hotel Hall & Meeting Room Booking Application
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Developed using Laravel (PHP), HTML, CSS**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project Overview
+This web application is designed to manage the booking of hotel halls and meeting rooms. It includes features for receptionists to verify payments, manage check-ins and check-outs, and for guests to make and cancel bookings, as well as upload payment proofs.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+### Receptionist Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Payment Verification**:
+  - If payment is made **up to 5 hours** after booking: Payment is valid, booking status becomes **valid**, and meeting room/hall status becomes **unavailable**.
+  - If payment is made **more than 5 hours** after booking: Payment is invalid, booking status becomes **invalid**, and meeting room/hall status remains **available**.
+  
+- **Check-in**:
+  - Verify that the check-in date matches the booking.
+  - Successful check-in marks the guest's status as checked in.
+  
+- **Check-out**:
+  - Check for any damage to items or facilities.
+  - Successful check-out makes the meeting room/hall status **available** again.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Guest Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Booking Cancellation**:
+  - If cancellation is made **at least 2 days** before the event date: The cancellation is allowed, and the meeting room/hall status becomes **available** again.
+  - If cancellation is made **less than 2 days** before the event date: Cancellation is not allowed, the room/hall status remains **unavailable**, and any refund requests are handled via reports.
 
-## Laravel Sponsors
+- **Payment**:
+  - Guests can upload an image as **proof of payment** for their booking.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Technology Stack
+- **Laravel** (Backend)
+- **PHP** (Backend)
+- **HTML/CSS** (Frontend)
 
-### Premium Partners
+## Usage
+- Receptionists can manage booking verifications, check-in and check-out processes, and ensure room availability is updated based on guest actions.
+- Guests can manage their bookings, upload payment proofs, and request cancellations if eligible.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Let me know if you'd like to add more information or adjustments!
